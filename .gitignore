@@ -1,58 +1,67 @@
-# --- Python ---
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
-build/
-dist/
-*.egg-info/
-.eggs/
 
-# --- Virtual environments ---
+# Virtual environments
 .venv/
 venv/
 env/
 ENV/
 
-# --- Jupyter ---
+# Jupyter
 .ipynb_checkpoints/
-*/.ipynb_checkpoints/*
 
-# --- Data (raw and processed data should not be committed) ---
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# --- Data ---
+
 data/raw/*
 data/processed/*
+
+
 !data/raw/.gitkeep
 !data/processed/.gitkeep
-*.csv
+
+
 *.xlsx
 *.xls
 *.parquet
 *.pkl
 *.pickle
-!variable_mapping.csv
-!schema_diff.csv
 
-# --- Outputs ---
-outputs/figures/*
-!outputs/figures/.gitkeep
+*.csv
 
-# --- Environment / secrets ---
-.env
-.env.*
-*.key
+# --- Metadata ---
+!docs/
+!docs/**
+!docs/**/*.csv
+!docs/**/*.xlsx
+!docs/**/*.xls
+!docs/**/*.md
+!docs/**/*.txt
 
-# --- OS / editor cruft ---
-.DS_Store
-Thumbs.db
-.idea/
-.vscode/
-*.swp
+# --- Project outputs ---
 
-# --- Testing / coverage ---
-.pytest_cache/
-.coverage
-htmlcov/
+outputs/
+results/
+figures/
+reports/generated/
 
-# --- Logs ---
-*.log
+
+!outputs/.gitkeep
+!results/.gitkeep
+!figures/.gitkeep
+!reports/generated/.gitkeep
