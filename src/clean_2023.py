@@ -41,14 +41,14 @@ REQUIRED_COLUMNS = [
     "C1J",
     "C1K",
     "C1L",
-    "WT1",
+    "WT1"
 ]
 
 SEG_COLUMNS = {
     "QS6A": "AB",
     "QS6B": "C1",
     "QS6C": "C2",
-    "QS6D": "DE",
+    "QS6D": "DE"
 }
 
 EMPLOYMENT_COLUMNS = {
@@ -58,14 +58,14 @@ EMPLOYMENT_COLUMNS = {
     "QS7D": "student",
     "QS7E": "home_family",
     "QS7F": "retired",
-    "QS7G": "other",
+    "QS7G": "other"
 }
 
 SWITCH_COLUMNS = {
     "QLLSUMA": "switched_landline_12m",
     "QBBSUMA": "switched_broadband_12m",
     "QMPSUMA": "switched_mobile_12m",
-    "QPTVSUMA": "switched_paytv_12m",
+    "QPTVSUMA": "switched_paytv_12m"
 }
 
 DISABILITY_CONDITION_COLUMNS = [
@@ -77,7 +77,7 @@ DISABILITY_CONDITION_COLUMNS = [
     "C1F",
     "C1G",
     "C1H",
-    "C1I",
+    "C1I"
 ]
 
 
@@ -248,8 +248,8 @@ def main() -> None:
     if (clean["survey_weight"] <= 0).any():
         raise ValueError("2023 contains non-positive survey weights.")
 
-    OUTPUT_FILE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    clean.to_csv(OUTPUT_FILE_PATH, index=False)
+    OUTPUT_FILE_PATH.parent.mkdir(parents=True, exist_ok=True) 
+    clean.to_csv(OUTPUT_FILE_PATH, index=False) # extract cleaned file to data/processed/2023/
 
     print(f"Saved 2023 harmonised data to {OUTPUT_FILE_PATH}")
     print(f"Final shape: {clean.shape[0]:,} rows x {clean.shape[1]:,} columns")

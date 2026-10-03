@@ -43,14 +43,14 @@ REQUIRED_COLUMNS = [
     "C1L",
     "C1M",
     "C1N",
-    "WT3",
+    "WT3"
 ]
 
 SEG_COLUMNS = {
     "QS6A": "AB",
     "QS6B": "C1",
     "QS6C": "C2",
-    "QS6D": "DE",
+    "QS6D": "DE"
 }
 
 EMPLOYMENT_COLUMNS = {
@@ -60,14 +60,14 @@ EMPLOYMENT_COLUMNS = {
     "QS7D": "student",
     "QS7E": "home_family",
     "QS7F": "retired",
-    "QS7G": "other",
+    "QS7G": "other"
 }
 
 SWITCH_COLUMNS = {
     "QLLSUMA": "switched_landline_12m",
     "QBBSUMA": "switched_broadband_12m",
     "QMPSUMA": "switched_mobile_12m",
-    "QPTVSUMA": "switched_paytv_12m",
+    "QPTVSUMA": "switched_paytv_12m"
 }
 
 DISABILITY_CONDITION_COLUMNS = [
@@ -81,7 +81,7 @@ DISABILITY_CONDITION_COLUMNS = [
     "C1H",
     "C1I",
     "C1J",
-    "C1K",
+    "C1K"
 ]
 
 
