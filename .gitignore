@@ -26,8 +26,7 @@ Thumbs.db
 # Logs
 *.log
 
-# --- Data ---
-
+# Data
 data/raw/*
 data/processed/*
 
@@ -35,26 +34,19 @@ data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
-
+# Common data formats
+*.csv
 *.xlsx
 *.xls
 *.parquet
 *.pkl
 *.pickle
 
-*.csv
-
-# --- Metadata ---
+# track docs
 !docs/
 !docs/**
-!docs/**/*.csv
-!docs/**/*.xlsx
-!docs/**/*.xls
-!docs/**/*.md
-!docs/**/*.txt
 
-# --- Project outputs ---
-
+# Project outputs
 outputs/
 results/
 figures/

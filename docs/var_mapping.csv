@@ -1,0 +1,21 @@
+standard_name,source_2023,source_2025,comparable,harmonisation_rule
+respondent_id,IOBS,ZID_AUTO,Yes,Rename both to respondent_id; confirm no duplicate IDs within each wave before merge
+survey_weight,WT1,WT3,Conditional,Use each wave's own final published weight per Ofcom guidance. Pay TV calibration target changed (fixed 2019 incidence in 2023 vs current directly-collected incidence in 2025) per technical reports. Carry a weight_note flag through pipeline; report weighted and unweighted estimates side by side.
+wave,(derived),(derived),Yes,Set to 2023 or 2025 based on source file before any merge/reshape
+switched_landline_12m,QLLSUMA,QLLSUMA,Yes,"Map explicit switch=1, eligible no-switch=0, ineligible/never-had-service/don't know=NA. Verify response category counts match across waves (see coding_decisions.md)."
+switched_broadband_12m,QBBSUMA,QBBSUMA,Yes,Same rule as landline. Primary treatment-group outcome.
+switched_mobile_12m,QMPSUMA,QMPSUMA,Yes,Same rule as landline. Primary control-group outcome (unaffected by OTS).
+switched_paytv_12m,QPTVSUMA,QPTVSUMA,Conditional,"Same coding rule as landline, but treat as secondary/caveated placebo only -- Pay TV weighting calibration changed between waves (see survey_weight note), so a null/unexpected result here is not strong evidence against the main finding."
+age_group,S4,S4,Yes,Recode into common age bands (16-34 / 35-54 / 55+) matching technical report reporting bands
+seg,QS6A-QS6D (derived AB/C1/C2/DE),QS6A-QS6D (derived AB/C1/C2/DE),Yes,Use existing AB/C1/C2/DE derived flags; confirm identical category construction via codebook before use
+region,OS1B,OS1B,Yes,Confirm identical region coding both waves before use as control
+contract_status_broadband,QCONTBB2A-QCONTBB2H / BKCONTBB,QCONTBB2A-QCONTBB2H / BKCONTBB,Conditional,BKCONTBB is a 2025-only derived summary variable; confirm it aggregates the same underlying QCONTBB2x categories as manually derived in 2023 before treating as equivalent
+income_band,C6,C6,Not comparable,Excluded from primary model per audit -- flagged for review of question wording/category consistency; exploratory use only if confirmed
+financially_vulnerable,FVUL,FVUL,Not comparable,Excluded from primary model per audit -- flagged as "unknown" pending line-by-line codebook comparison; exploratory/secondary analysis only
+disability_flag,C1A-C1L,C1A-C1L,Not comparable,2025 adds new categories (C1M, C1N) not present in 2023; do not treat as a like-for-like control without recoding to a shared, coarser category set
+broadband_setup_recall,Q18A_1A-Q18A_6L (72 vars),Q18A_1-Q18A_6 (6 vars),Not comparable,"Questionnaire restructured (banded categories in 2023 collapsed differently in 2025). Excluded from all analysis -- not needed for the DiD outcome."
+sports_paytv_addon,(not present),Q19__1A-Q19__6D,Not comparable,2025-only new question block. No 2023 equivalent. Retained as a note for future/extension work only.
+switch_process_manager,(not present),Q30_1_1-Q30_1_6 / Q30_3_1-Q30_3_6,Not comparable,2025-only new question block. No 2023 equivalent. Retained as a note for future/extension work only.
+employment_refused_code,QS7H ("Refused"),QS7H ("Prefer not to say"),Yes,Recode both to a single shared category label (e.g. "declined") -- same underlying non-response, different wording only
+tv_provider_category,Q4AA-Q4AO / Q4BA-Q4BN,Q4AA-Q4AO / Q4BA-Q4BN,Conditional,Category set changed (BT TV/EE TV treatment, addition of Freely). Do not use raw category-level breakdowns across waves without recoding to a shared coarser set (e.g. any_pay_tv / any_free_tv using existing ANY PAY TV / ANY FREE TV summary flags which are more stable)
+streaming_provider_category,Q6EA-Q6EAX,Q6EA-Q6EAX (plus Q6EAY new),Conditional,Some categories added/removed/reclassified between waves; not used in primary model, exploratory only if needed
